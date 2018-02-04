@@ -3,6 +3,7 @@
 ![alt text](SpaceshipInterface.jpg
 )
 
+<img src = "img/SpaceshipInterface.png" alt = "">
 img src= "SpaceshipInterface.jpg"
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=https://youtu.be/Kv2IuH4tm5c
