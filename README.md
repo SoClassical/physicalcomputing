@@ -1,11 +1,10 @@
 # Spaceship Interface
 
-![alt text](SpaceshipInterface.jpg
-)
+<!DOCTYPE html>
 
+<body>
+<img src="https://drive.google.com/file/d/1Vl5OwziITPDIe-FmQG-nAR2k0vZ_DtbN/view?usp=sharing.jpq">
 
-<img src= "Documents/GitHub/physicalcomputing/hw/week3/SpaceshipInterface.jpg">
+</body>
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=https://youtu.be/Kv2IuH4tm5c
-"target="_blank"><img src="http://img.youtube.com/vi/https://youtu.be/Kv2IuH4tm5c/0.jpg"
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+</html>
