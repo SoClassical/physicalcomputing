@@ -1,0 +1,114 @@
+
+int switchState1 = 0;
+int switchState0 = 0;
+
+int pattern[3] = {1, 0, 1};
+
+long onTime = 0;
+int mode = 0;
+
+boolean pressing = false;
+
+boolean startTimer = false;
+
+//Mode 2 Variables
+int counter = 0;
+
+long pMillis = 0;
+
+int interval = 5000;
+
+void setup() {
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, INPUT);
+  pinMode(5, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (startTimer == false) {
+    switchState0 = digitalRead(4); //The true button
+    switchState1 = digitalRead(5); //The false button
+    //Serial.println(switchRead);
+
+    //true switch
+    if (switchState0 == 1) {
+      pressing = true;
+    }
+
+  }
+
+    if (switchState0 == 0 && pressing == true) {
+      pressing = false;
+      //check answer
+
+      if (pattern[counter] == 0) {
+        mode = 2;
+        startTimer = true;
+        onTime = millis();
+      } else {
+        mode = 1;
+        startTimer = true;
+        onTime = millis();
+      }
+
+
+    }
+
+    if (startTimer == true) {
+      if (millis() - onTime >= interval) {
+        startTimer = false;
+        counter++;
+        mode = 0;
+      }
+    }
+
+
+    //false switch
+    if (switchState1 == 1) {
+      pressing = true;
+      }
+
+       if (switchState1 == 0 && pressing == true) {
+       pressing = false;
+       //check answer
+
+         if(pattern[counter]==1){
+         mode = 2;
+         startTimer = true;
+         onTime = millis();
+         }else{
+         mode = 1;
+         startTimer = true;
+         onTime = millis();
+         }
+       }
+         if(startTimer == true){
+           if (millis() - onTime >= interval){
+           startTimer = false;
+           counter++;
+           mode = 0;
+           }
+         }
+
+
+  if (mode == 0) {
+    //Reset of Off Condition
+    digitalWrite(2, LOW); //red led
+    digitalWrite(3, LOW); //green led
+
+  }
+  else if (mode == 1) {
+    digitalWrite(2, HIGH); //red led aka INCORRECT
+    digitalWrite(3, LOW); //green led
+
+  } else if (mode == 2) {
+    digitalWrite(2, LOW); //red led
+    digitalWrite(3, HIGH); //green led aka CORRECT
+
+  } else {
+    mode = 0;
+  }
+
+}
