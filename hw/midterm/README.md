@@ -1,8 +1,8 @@
 # Midterm Project
 
-#### Project ideas: 1) Three LEDs to indicate three seconds pick number and letter, then it will tell you your fortune 2) Answer a  true/false question. A certain tune will play depending on the answer.
+#### Potential project ideas: 1) Three LEDs to indicate three seconds pick number and letter, then it will tell you your fortune 2) Answer a  true/false question. A certain tune will play depending on the answer.
 
-### The Trivia Game
+## The Trivia Game
 
 #### The finished product: https://youtu.be/n2zen_ChrSQ
 
@@ -18,8 +18,6 @@
 ### The process:
 #### I first assembled the breadboard, which took a lot less time than I thought. Other than the supplies I listed above, I only needed 6 wires and 4 resistors. I also had a piezo on the breadboard at the time, so everything was very close together. I ended switching to a longer breadboard for more room. Because of this, I also had to find a larger box to contain my project.
 
-
-
 #### Assembling the breadboard was no problem, but the code was a different story. When I first thought of this project idea, I did not imagine the code to be this complicated.
 
 #### First I declared all the variables and filled in code for the setup with no problem. Fine. But that was just the beginning. Afterwards, I ran into several problems. Here are just a few:
@@ -30,6 +28,6 @@
 
 #### https://youtu.be/gWuzvI0V5Vg Finally my code was all laid out and ready to go (or so I thought). The most problematic problem revealed itself: The LEDs did not turn off after 5 seconds like they were supposed to. No matter what I tried, I could not figure it out. In the end, I went to meet with Prof. Rodriguez in hopes of fixing this. It turned out to be an error in my logic.
 
-#### After fixing the code, I fixed up the box (inside and out) so that it was more aesthetically pleasing--sort of. I had to make sure I could connect the Arduino to my laptop with the wire coming out of the box while also making sure the layout inside the box was clear. Inside the box are two pockets for the questions and answers.
+#### After fixing the code, I fixed up the box (inside and out) so that it was more aesthetically pleasing--sort of. I had to make sure I could connect the Arduino to my laptop with the wire coming out of the box while also making sure the layout inside the box was clear. Inside the box are two pockets for the questions and answers. I chose this box because it was one of the only items I had that could contain this project. It is also quite portable and easy to carry. 
 
 #### If I had more time with this project, I would definitely spend more time to work out the piezo. Originally, I wanted a tune to play for a correct answer and an incorrect answer, but it was difficult for me to find time to work on the piezo without annoying everyone else around me.
