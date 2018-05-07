@@ -1,0 +1,104 @@
+int switchState = 0;
+
+const int jaws = 5;
+const int hp = 4;
+const int starWars = 3;
+const int simpsons = 2;
+
+int LED = 13;
+int BUTTON = 12;
+
+boolean pressing = false;
+
+int randNumber = 0;
+
+
+void setup() {
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(12, OUTPUT);
+
+  pinMode(LED, OUTPUT);
+  pinMode(BUTTON, INPUT);
+  setupSound(jaws);
+  setupSound(hp);
+  setupSound(starWars);
+  setupSound(simpsons);
+
+  randomSeed(analogRead(0));
+
+  Serial.begin(9600);
+
+
+}
+
+void loop() {
+  switchState = digitalRead(12);
+  if (switchState == HIGH) {
+    pressing = true;
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+  }
+  if (switchState == LOW && pressing == true) {
+     pressing = false;
+     int randNumber = int(random(1,5));
+   //while(randNumber == prevNumber)
+     Serial.println(randNumber);
+    if(randNumber == 1){
+      delay(500);
+      activateSound(jaws);
+      delay(500);
+      digitalWrite(6, HIGH);
+      digitalWrite(7, LOW);
+      digitalWrite(8, LOW);
+      digitalWrite(9, LOW);
+    }
+    if(randNumber == 2){
+      delay(500);
+      activateSound(hp);
+      delay(500);
+      digitalWrite(6, LOW);
+      digitalWrite(7, HIGH);
+      digitalWrite(8, LOW);
+      digitalWrite(9, LOW);
+    }
+    if(randNumber == 3){
+      delay(500);
+      activateSound(starWars);
+      delay(500);
+      digitalWrite(6, LOW);
+      digitalWrite(7, LOW);
+      digitalWrite(8, HIGH);
+      digitalWrite(9, LOW);
+    }
+    if(randNumber == 4){
+      delay(500);
+      activateSound(simpsons);
+      delay(500);
+      digitalWrite(6, LOW);
+      digitalWrite(7, LOW);
+      digitalWrite(8, LOW);
+      digitalWrite(9, HIGH);
+      }
+
+    }
+
+  }
+
+  void setupSound(int pin) {
+    pinMode(pin, OUTPUT);
+    digitalWrite(pin, HIGH);
+  }
+
+  void activateSound(int pin) {
+    digitalWrite(LED, HIGH);
+    digitalWrite(pin, LOW);
+
+    delay(100);
+    digitalWrite(pin, HIGH);
+    digitalWrite(LED, LOW);
+  }
